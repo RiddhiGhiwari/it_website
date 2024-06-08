@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Consultancy Services</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-action="index">Home</a></li>
+                <li><a href="about.html" data-action="about">About Us</a></li>
+                <li><a href="services.html" data-action="services">Services</a></li>
+                <li><a href="contact.html" data-action="contact">Contact Us</a></li>
+                <li><a href="blog.html" data-action="blog">Blog/News</a></li>
+                <li><a href="careers.html" data-action="careers">Careers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[data-action]');
+            links.forEach(link => {
+                const action = link.getAttribute('data-action');
+                link.href = '/' + action;
+            });
+        });
+    </script>
+    <section id="introduction">
+        <h1>Welcome to Our IT Consultancy Services</h1>
+        <p>We provide top-notch IT consulting services to help businesses innovate and grow. Our team of experienced professionals is dedicated to delivering customized solutions that meet your specific needs.</p>
+    </section>
+
+    <section id="services-overview">
+        <h2>Our Services</h2>
+        <div class="service">
+            <h3>IT Strategy Consulting</h3>
+            <p style="margin-left: 33%;">Helping you create a strategic IT plan aligned with your business goals.</p>
+        </div>
+        <div class="service">
+            <h3>Cybersecurity Solutions</h3>
+            <p style="margin-left: 33%;">Protecting your business from cyber threats with advanced security measures.</p>
+        </div>
+        <div class="service"style="margin-top: 30px;">
+            <h3>Cloud Services</h3>
+            <p style="margin-left: 33%;">Offering scalable cloud solutions to enhance your business operations.</p>
+        </div>
+    </section>
+
+    <section id="key-differentiators">
+        <h2>Why Choose Us?</h2>
+        <ul style="margin-left: 39%;">
+            <li>Expertise in the latest technologies.</li>
+            <li>Customized solutions tailored to your needs.</li>
+            <li>Proven track record of success.</li>
+            <li>Commitment to customer satisfaction.</li>
+        </ul>
+    </section>
+
+    <section id="testimonials">
+        <h2>Client Testimonials</h2>
+        <p style="margin-left: 39%;">"Excellent service and support!" - Client A</p>
+        <p style="margin-left: 39%;">"Professional and reliable IT consultants." - Client B</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 IT Consultancy Services</p>
+    </footer>
+</body>
+</html>

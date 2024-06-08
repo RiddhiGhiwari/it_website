@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog/News - IT Consultancy Services</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-action="index">Home</a></li>
+                <li><a href="about.html" data-action="about">About Us</a></li>
+                <li><a href="services.html" data-action="services">Services</a></li>
+                <li><a href="contact.html" data-action="contact">Contact Us</a></li>
+                <li><a href="blog.html" data-action="blog">Blog/News</a></li>
+                <li><a href="careers.html" data-action="careers">Careers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[data-action]');
+            links.forEach(link => {
+                const action = link.getAttribute('data-action');
+                link.href = '/' + action;
+            });
+        });
+    </script>
+
+    <section id="blog">
+        <h1>Blog/News</h1>
+        <article>
+            <h2>Latest Blog Post</h2>
+            <p style="margin-left: 34%;">Stay tuned for our latest updates and insights on IT consultancy...</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 IT Consultancy Services</p>
+    </footer>
+</body>
+</html>

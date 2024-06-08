@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - IT Consultancy Services</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-action="index">Home</a></li>
+                <li><a href="about.html" data-action="about">About Us</a></li>
+                <li><a href="services.html" data-action="services">Services</a></li>
+                <li><a href="contact.html" data-action="contact">Contact Us</a></li>
+                <li><a href="blog.html" data-action="blog">Blog/News</a></li>
+                <li><a href="careers.html" data-action="careers">Careers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[data-action]');
+            links.forEach(link => {
+                const action = link.getAttribute('data-action');
+                link.href = '/' + action;
+            });
+        });
+    </script>
+
+    <section id="services">
+        <h1>Our Services</h1>
+        <div class="service-detail">
+            <h2>IT Strategy Consulting</h2>
+            <p style="margin-left: 30%;">We help businesses develop and implement effective IT strategies to align with their goals...</p>
+            <ul style="margin-left: 38%;">
+                <li>Comprehensive IT assessments</li>
+                <li>Strategic planning and roadmap development</li>
+                <li>Technology selection and implementation</li>
+            </ul>
+        </div>
+        <div class="service-detail">
+            <h2>Cybersecurity Solutions</h2>
+            <p style="margin-left: 30%;">Our cybersecurity services protect your business from threats and ensure data integrity...</p>
+            <ul style="margin-left: 38%;">
+                <li>Threat assessment and vulnerability management</li>
+                <li>Data encryption and protection</li>
+                <li>24/7 monitoring and support</li>
+            </ul>
+        </div>
+        <div class="service-detail">
+            <h2>Cloud Services</h2>
+            <p style="margin-left: 30%;">We provide scalable and reliable cloud solutions to enhance your business operations...</p>
+            <ul style="margin-left: 38%;">
+                <li>Cloud strategy and migration</li>
+                <li>Cloud infrastructure management</li>
+                <li>Cost optimization and efficiency</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="case-studies">
+        <h2>Case Studies</h2>
+        <div class="case-study">
+            <h3>Project A</h3>
+            <p style="margin-left: 30%;">Our work with Company A involved developing a comprehensive IT strategy that resulted in...</p>
+        </div>
+        <div class="case-study">
+            <h3>Project B</h3>
+            <p style="margin-left: 30%;">We helped Company B enhance their cybersecurity posture, reducing risks by...</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 IT Consultancy Services</p>
+    </footer>
+</body>
+</html>

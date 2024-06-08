@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - IT Consultancy Services</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="{% static 'script.js' %}" defer></script> <!-- Include the JS file -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-action="index">Home</a></li>
+                <li><a href="about.html" data-action="about">About Us</a></li>
+                <li><a href="services.html" data-action="services">Services</a></li>
+                <li><a href="contact.html" data-action="contact">Contact Us</a></li>
+                <li><a href="blog.html" data-action="blog">Blog/News</a></li>
+                <li><a href="careers.html" data-action="careers">Careers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[data-action]');
+            links.forEach(link => {
+                const action = link.getAttribute('data-action');
+                link.href = '/' + action;
+            });
+        });
+    </script>
+
+    <section id="contact">
+        <div class="contact-banner">
+            <img src="{% static 'contactus.jpg' %}" alt="Contact Us">
+        </div>
+        <h1>Contact Us</h1>
+        <form id="contactForm" method="POST">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+
+            <button type="submit" style="width:30%;margin-left: 35%;">Submit</button>
+        </form>
+
+        <div class="company-info">
+            <h2>Company Information</h2>
+            <p>Email: info@itconsultancy.com</p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Address: 1234 IT Consultancy St, Tech City, TC 56789</p>
+        </div>
+
+        <div class="social-media">
+            <h2>Follow Us</h2>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 IT Consultancy Services</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - IT Consultancy Services</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-action="index">Home</a></li>
+                <li><a href="about.html" data-action="about">About Us</a></li>
+                <li><a href="services.html" data-action="services">Services</a></li>
+                <li><a href="contact.html" data-action="contact">Contact Us</a></li>
+                <li><a href="blog.html" data-action="blog">Blog/News</a></li>
+                <li><a href="careers.html" data-action="careers">Careers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[data-action]');
+            links.forEach(link => {
+                const action = link.getAttribute('data-action');
+                link.href = '/' + action;
+            });
+        });
+    </script>
+
+    <section id="company-history">
+        <h1>About Us</h1>
+        <p style="margin-left: 21%;">Founded in 2010, our company has been at the forefront of IT consulting, delivering innovative solutions to businesses worldwide...</p>
+    </section>
+
+    <section id="mission-vision-values">
+        <h2>Mission, Vision, and Values</h2>
+        <p style="margin-left: 30%;"><strong>Mission:</strong> To provide exceptional IT consulting services that drive business success.</p>
+        <p style="margin-left: 30%;"><strong>Vision:</strong> To be a global leader in IT consulting, recognized for our expertise and customer focus.</p>
+        <p style="margin-left: 30%;"><strong>Values:</strong> Integrity, Innovation, Excellence, Customer Satisfaction.</p>
+    </section>
+
+    <section id="team-profiles">
+        <h2>Our Team</h2>
+        <div class="team-member">
+            <img src="team-member1.jpg" alt="Team Member 1" style="margin-left: 30%;">
+            <p style="margin-left: 30%;"><strong>John Doe</strong> - CEO. John has over 20 years of experience in IT consulting...</p>
+        </div>
+        <div class="team-member">
+            <img src="team-member2.jpg" alt="Team Member 2" style="margin-left: 30%;">
+            <p style="margin-left: 30%;"><strong>Jane Smith</strong> - CTO. Jane is an expert in cybersecurity with a passion for protecting businesses...</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 IT Consultancy Services</p>
+    </footer>
+</body>
+</html>
